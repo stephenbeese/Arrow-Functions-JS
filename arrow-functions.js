@@ -58,159 +58,232 @@
  */
 
 // Regular function call
-const sumAll = (a, b, c) => a + b + c;
+// const sumAll = (a, b, c) => a + b + c;
 
-let sum = sumAll(1, 2, 3);
-console.log("Sum:", sum);
+// let sum = sumAll(1, 2, 3);
+// console.log("Sum:", sum);
 
-// Extra arguments are ignored
-let sum2 = sumAll(1, 2, 3, 4, 5, 6);
-console.log("Sum2:", sum2);
+// // Extra arguments are ignored
+// let sum2 = sumAll(1, 2, 3, 4, 5, 6);
+// console.log("Sum2:", sum2);
 
-// Function using ...rest
-const sumRest = (a, b, c, ...rest) => {
-    let sum = a + b + c;
-    for (let i of rest) {
-        sum += i;
-    }
-    return sum;
-}
+// // Function using ...rest
+// const sumRest = (a, b, c, ...rest) => {
+//     let sum = a + b + c;
+//     for (let i of rest) {
+//         sum += i;
+//     }
+//     return sum;
+// }
 
-let sum3 = sumRest(1, 2, 3, 4, 5, 6);
-console.log("Sum3:", sum3)
+// let sum3 = sumRest(1, 2, 3, 4, 5, 6);
+// console.log("Sum3:", sum3)
 
 
-/**
- * Destructuring
- */
+// /**
+//  * Destructuring
+//  */
 
-// NOT DESTRUCTURING
+// // NOT DESTRUCTURING
+// // let ages =[30, 26, 27];
+// // let john = ages[0]
+// // let mary = ages[1]
+// // let joe = ages[2]
+
+// //Destructuring arrays
 // let ages =[30, 26, 27];
-// let john = ages[0]
-// let mary = ages[1]
-// let joe = ages[2]
-
-//Destructuring arrays
-let ages =[30, 26, 27];
-let [john, mary, joe] = ages;
-console.log(john, mary, joe)
+// let [john, mary, joe] = ages;
+// console.log(john, mary, joe)
 
 
-//Destructuring objects
+// //Destructuring objects
 
-let jobs = {
-    mike: "designer",
-    jill: "developer",
-    alicia: "accountant",
-};
+// let jobs = {
+//     mike: "designer",
+//     jill: "developer",
+//     alicia: "accountant",
+// };
 
-let { mike, jill, alicia } = jobs;
-console.log(mike, jill, alicia);
-
-
-//Destructuring subsets
-
-let languages = ["english", "french", "spanish", "german", "japanese"];
-let [johnNative, JohnSecondary] = languages;
-console.log(johnNative, JohnSecondary);
-
-let [, , maryNative, marySecondary] = languages;
-console.log(maryNative, marySecondary);
-
-let languages2 = {
-    firstLanguage: "english",
-    secondLanguage: "french",
-    thirdLanguage: "spanish",
-    fourthLanguage: "german",
-    fifthLanguage: "japanese"
-};
-
-let { firstLanguage, thirdLanguage } = languages2;
-console.log(firstLanguage, thirdLanguage);
-
-// Using rest parameter syntax
+// let { mike, jill, alicia } = jobs;
+// console.log(mike, jill, alicia);
 
 
-let fruits = ["apple", "orange", "banana", "peach", "cherry"]
-let [favourite, secondFavourite, ...others] = fruits;
-console.log(favourite);
-console.log(secondFavourite);
-console.log(others);
+// //Destructuring subsets
 
-let favouriteFoods = {
-    brian: "pizza",
-    anna: "pasta",
-    sarah: "vegetarian",
-    andrea: "steak",
-};
-let { brian, anna, ...rest } = favouriteFoods;
-console.log(brian);
-console.log(anna);
-console.log(rest);
+// let languages = ["english", "french", "spanish", "german", "japanese"];
+// let [johnNative, JohnSecondary] = languages;
+// console.log(johnNative, JohnSecondary);
+
+// let [, , maryNative, marySecondary] = languages;
+// console.log(maryNative, marySecondary);
+
+// let languages2 = {
+//     firstLanguage: "english",
+//     secondLanguage: "french",
+//     thirdLanguage: "spanish",
+//     fourthLanguage: "german",
+//     fifthLanguage: "japanese"
+// };
+
+// let { firstLanguage, thirdLanguage } = languages2;
+// console.log(firstLanguage, thirdLanguage);
+
+// // Using rest parameter syntax
+
+
+// let fruits = ["apple", "orange", "banana", "peach", "cherry"]
+// let [favourite, secondFavourite, ...others] = fruits;
+// console.log(favourite);
+// console.log(secondFavourite);
+// console.log(others);
+
+// let favouriteFoods = {
+//     brian: "pizza",
+//     anna: "pasta",
+//     sarah: "vegetarian",
+//     andrea: "steak",
+// };
+// let { brian, anna, ...rest } = favouriteFoods;
+// console.log(brian);
+// console.log(anna);
+// console.log(rest);
+
+
+// /**
+//  * map()
+//  */
+
+// // Using a for loop
+// let nums = [1, 2, 3, 4, 5];
+// console.log(nums)
+// let results = []
+
+// for (let num of nums) {
+//     results.push(num * 2);
+// }
+// console.log(results);
+
+// // Using map()
+// const multByTwo = function (num) {
+//     return num * 2;
+// }
+// const mapResults = nums.map(multByTwo);
+// console.log(mapResults);
+
+// // Simplified w/ map()
+
+// const simplified = nums.map(function (num) { return num * 2 });
+// console.log(simplified);
+
+// // Simplified w/ map + arrow function
+
+// const arrow = nums.map(num => num * 2);
+// console.log(arrow);
+
+// // with objects:
+
+// const students = [
+//     {
+//         id: 1,
+//         name: 'Mark',
+//         profession: 'Developer',
+//         skill: 'JavaScript'
+//     },
+//     {
+//         id: 2,
+//         name: 'Ariel',
+//         profession: 'Developer',
+//         skill: 'HTML'
+//     },
+//     {
+//         id: 3,
+//         name: 'Jason',
+//         profession: 'Designer',
+//         skill: 'CSS'
+//     },
+// ];
+
+
+// const studentsWithIds = students.map(students => [students.name, students.id]);
+// console.log(studentsWithIds)
+
+// const studentsWithIdsDict = students.map(students => {return {name: students.name, id: students.id}});
+
+// console.log(studentsWithIdsDict)
+
+// const studentsWithIdsAge = students.map(students => [students.age = 30]);
+// console.log(studentsWithIdsAge);
+// console.log(students);
 
 
 /**
- * map()
+ * The filter() method
  */
 
-// Using a for loop
-let nums = [1, 2, 3, 4, 5];
-console.log(nums)
-let results = []
-
-for (let num of nums) {
-    results.push(num * 2);
-}
-console.log(results);
-
-// Using map()
-const multByTwo = function (num) {
-    return num * 2;
-}
-const mapResults = nums.map(multByTwo);
-console.log(mapResults);
-
-// Simplified w/ map()
-
-const simplified = nums.map(function (num) { return num * 2 });
-console.log(simplified);
-
-// Simplified w/ map + arrow function
-
-const arrow = nums.map(num => num * 2);
-console.log(arrow)
-
-// with objects:
-
-const students = [
+// Simple Filtering
+const people = [
     {
-        id: 1,
-        name: 'Mark',
-        profession: 'Developer',
-        skill: 'JavaScript'
+      name: 'Michael',
+      age: 23,
     },
     {
-        id: 2,
-        name: 'Ariel',
-        profession: 'Developer',
-        skill: 'HTML'
+      name: 'Lianna',
+      age: 16,
     },
     {
-        id: 3,
-        name: 'Jason',
-        profession: 'Designer',
-        skill: 'CSS'
+      name: 'Paul',
+      age: 18,
     },
-];
+  ];
+
+  const oldEnough = people.filter(person => person.age >= 21);
+  console.log(oldEnough);
+  
+  const paul = people.filter(p => p.name === 'Paul')[0];
+  console.log(paul);
+
+  // Complex Filtering
+  const students = [
+    {
+      id: 1,
+      name: 'Mark',
+      profession: 'Developer',
+      skills: [
+        { name: 'javascript', yrsExperience: 1 },
+        { name: 'html', yrsExperience: 5 },
+        { name: 'css', yrsExperience: 3 },
+      ]
+    },
+    {
+      id: 2,
+      name: 'Ariel',
+      profession: 'Developer',
+      skills: [
+        { name: 'javascript', yrsExperience: 0 },
+        { name: 'html', yrsExperience: 4 },
+        { name: 'css', yrsExperience: 2 },
+      ]
+    },
+    {
+      id: 3,
+      name: 'Jason',
+      profession: 'Designer',
+      skills: [
+        { name: 'javascript', yrsExperience: 1 },
+        { name: 'html', yrsExperience: 1 },
+        { name: 'css', yrsExperience: 5 },
+      ]
+    },
+  ];
+
+const has5YrsExp = skill => skill.yrsExperience >= 5;
+const hasStrongSkills = student => student.skills.filter(has5YrsExp).length > 0;
+const candidates = students.filter(hasStrongSkills);
+console.log(candidates);
+
+// gets candidates names
+const names = candidates.map(candidates => candidates.name);
+console.log(names);
 
 
-const studentsWithIds = students.map(students => [students.name, students.id]);
-console.log(studentsWithIds)
-
-const studentsWithIdsDict = students.map(students => {return {name: students.name, id: students.id}});
-
-console.log(studentsWithIdsDict)
-
-const studentsWithIdsAge = students.map(students => [students.age = 30]);
-console.log(studentsWithIdsAge);
-console.log(students);
+  
