@@ -210,3 +210,7 @@ console.log(studentsWithIds)
 const studentsWithIdsDict = students.map(students => {return {name: students.name, id: students.id}});
 
 console.log(studentsWithIdsDict)
+
+const studentsWithIdsAge = students.map(students => [students.age = 30]);
+console.log(studentsWithIdsAge);
+console.log(students);
